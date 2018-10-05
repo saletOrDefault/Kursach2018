@@ -28,12 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.label1 = new System.Windows.Forms.Label();
             this.Add = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Find = new System.Windows.Forms.Button();
+            this.off = new System.Windows.Forms.PictureBox();
+            this.timer = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.off)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -87,12 +92,41 @@
             this.Find.UseVisualStyleBackColor = true;
             this.Find.Click += new System.EventHandler(this.Find_Click);
             // 
+            // off
+            // 
+            this.off.Image = ((System.Drawing.Image)(resources.GetObject("off.Image")));
+            this.off.Location = new System.Drawing.Point(731, 317);
+            this.off.Name = "off";
+            this.off.Size = new System.Drawing.Size(55, 54);
+            this.off.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.off.TabIndex = 4;
+            this.off.TabStop = false;
+            this.off.Click += new System.EventHandler(this.off_Click);
+            // 
+            // timer
+            // 
+            this.timer.AutoSize = true;
+            this.timer.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.timer.ForeColor = System.Drawing.Color.Black;
+            this.timer.Location = new System.Drawing.Point(320, 332);
+            this.timer.Name = "timer";
+            this.timer.Size = new System.Drawing.Size(67, 28);
+            this.timer.TabIndex = 5;
+            this.timer.Text = "label2";
+            // 
+            // timer1
+            // 
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(787, 372);
+            this.Controls.Add(this.timer);
+            this.Controls.Add(this.off);
             this.Controls.Add(this.Find);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.Add);
@@ -105,7 +139,9 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Главное меню";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
+            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.off)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -117,6 +153,9 @@
         private System.Windows.Forms.Button Add;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button Find;
+        private System.Windows.Forms.PictureBox off;
+        private System.Windows.Forms.Label timer;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 

@@ -11,3 +11,8 @@ D:\Projects\Kursach\Kursach\obj\Debug\Kursach.Form1.resources
 D:\Projects\Kursach\Kursach\obj\Debug\Kursach.Form2.resources
 D:\Projects\Kursach\Kursach\obj\Debug\Kursach.Form3.resources
 D:\Projects\Kursach\Kursach\obj\Debug\Kursach.Form4.resources
+D:\Projects\Kursach\Kursach\bin\Debug\Interop.WMPLib.dll
+D:\Projects\Kursach\Kursach\bin\Debug\AxInterop.WMPLib.dll
+D:\Projects\Kursach\Kursach\obj\Debug\Interop.WMPLib.dll
+D:\Projects\Kursach\Kursach\obj\Debug\AxInterop.WMPLib.dll
+D:\Projects\Kursach\Kursach\obj\Debug\Kursach.csproj.ResolveComReference.cache

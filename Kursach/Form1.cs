@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Media;
 
 namespace Kursach
 {
@@ -15,7 +16,13 @@ namespace Kursach
         public Form1()
         {
             InitializeComponent();
+            timer.Text =  DateTime.Now.ToString("dd.MM.yyyy HH:mm:ss");
+            timer1.Start();
         }
+
+        bool tak;
+
+        SoundPlayer mus = new SoundPlayer("mus.wav");
 
         private void Add_Click(object sender, EventArgs e)
         {
@@ -46,6 +53,33 @@ namespace Kursach
             {
                 e.Cancel = true;
             }
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            mus.PlayLooping();
+            tak = true;
+        }
+
+        private void off_Click(object sender, EventArgs e)
+        {
+            if (tak)
+            {
+                mus.Stop();
+                tak = false;
+                off.Image = System.Drawing.Image.FromFile(@"D:\Projects\Kursach\Kursach\media\on.jpg");
+            }
+            else
+            {
+                mus.PlayLooping();
+                tak = true;
+                off.Image = System.Drawing.Image.FromFile(@"D:\Projects\Kursach\Kursach\media\off.jpg");
+            }
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            timer.Text = DateTime.Now.ToString("dd.MM.yyyy HH:mm:ss");
         }
     }
 }

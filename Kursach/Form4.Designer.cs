@@ -51,9 +51,9 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
             this.label1.Location = new System.Drawing.Point(98, 33);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(618, 29);
+            this.label1.Size = new System.Drawing.Size(636, 29);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Статистика потерянных вещей по района г. Казани";
+            this.label1.Text = "Статистика потерянных вещей по районам г. Казани";
             // 
             // label2
             // 
@@ -216,6 +216,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.Name = "Form4";
             this.Text = "Form4";
