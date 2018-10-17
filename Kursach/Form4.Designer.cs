@@ -219,7 +219,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.Name = "Form4";
-            this.Text = "Form4";
+            this.Text = "Справка";
             this.ResumeLayout(false);
             this.PerformLayout();
 

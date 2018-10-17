@@ -15,6 +15,9 @@ namespace Kursach
         public Form3()
         {
             InitializeComponent();
+            Label lab = new Label();
+            lab.Text = "dfhhtrh";
+            tableLayoutPanel1.Controls.Add(lab);
         }
     }
 }

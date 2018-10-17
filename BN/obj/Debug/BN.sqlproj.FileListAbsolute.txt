@@ -1,0 +1,10 @@
+D:\Программирование\Projects\Kursach\BN\bin\Debug\BN.dacpac
+D:\Программирование\Projects\Kursach\BN\bin\Debug\BN.dll
+D:\Программирование\Projects\Kursach\BN\bin\Debug\BN.pdb
+D:\Программирование\Projects\Kursach\BN\obj\Debug\BN.sqlprojAssemblyReference.cache
+D:\Программирование\Projects\Kursach\BN\obj\Debug\Model.xml
+D:\Программирование\Projects\Kursach\BN\obj\Debug\refactor.xml
+D:\Программирование\Projects\Kursach\BN\obj\Debug\postdeploy.sql
+D:\Программирование\Projects\Kursach\BN\obj\Debug\predeploy.sql
+D:\Программирование\Projects\Kursach\BN\obj\Debug\BN.dll
+D:\Программирование\Projects\Kursach\BN\obj\Debug\BN.pdb
