@@ -30,9 +30,9 @@ namespace Kursach {
         
         private ArchiveDataTable tableArchive;
         
-        private global::System.Data.DataRelation relationFK__Items__District__49C3F6B7;
+        private global::System.Data.DataRelation relationFK__Items__DistrictI__29221CFB;
         
-        private global::System.Data.DataRelation relationFK__Archive__Distric__14270015;
+        private global::System.Data.DataRelation relationFK__Archive__Distric__2A164134;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -246,8 +246,8 @@ namespace Kursach {
                     this.tableArchive.InitVars();
                 }
             }
-            this.relationFK__Items__District__49C3F6B7 = this.Relations["FK__Items__District__49C3F6B7"];
-            this.relationFK__Archive__Distric__14270015 = this.Relations["FK__Archive__Distric__14270015"];
+            this.relationFK__Items__DistrictI__29221CFB = this.Relations["FK__Items__DistrictI__29221CFB"];
+            this.relationFK__Archive__Distric__2A164134 = this.Relations["FK__Archive__Distric__2A164134"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -265,21 +265,21 @@ namespace Kursach {
             this.tableArchive = new ArchiveDataTable();
             base.Tables.Add(this.tableArchive);
             global::System.Data.ForeignKeyConstraint fkc;
-            fkc = new global::System.Data.ForeignKeyConstraint("FK__Items__District__49C3F6B7", new global::System.Data.DataColumn[] {
-                        this.tableDistricts.DistrictColumn}, new global::System.Data.DataColumn[] {
-                        this.tableItems.DistrictColumn});
+            fkc = new global::System.Data.ForeignKeyConstraint("FK__Items__DistrictI__29221CFB", new global::System.Data.DataColumn[] {
+                        this.tableDistricts.DistrictIDColumn}, new global::System.Data.DataColumn[] {
+                        this.tableItems.DistrictIDColumn});
             this.tableItems.Constraints.Add(fkc);
             fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
-            fkc.DeleteRule = global::System.Data.Rule.Cascade;
+            fkc.DeleteRule = global::System.Data.Rule.None;
             fkc.UpdateRule = global::System.Data.Rule.Cascade;
-            this.relationFK__Items__District__49C3F6B7 = new global::System.Data.DataRelation("FK__Items__District__49C3F6B7", new global::System.Data.DataColumn[] {
-                        this.tableDistricts.DistrictColumn}, new global::System.Data.DataColumn[] {
-                        this.tableItems.DistrictColumn}, false);
-            this.Relations.Add(this.relationFK__Items__District__49C3F6B7);
-            this.relationFK__Archive__Distric__14270015 = new global::System.Data.DataRelation("FK__Archive__Distric__14270015", new global::System.Data.DataColumn[] {
-                        this.tableDistricts.DistrictColumn}, new global::System.Data.DataColumn[] {
-                        this.tableArchive.DistrictColumn}, false);
-            this.Relations.Add(this.relationFK__Archive__Distric__14270015);
+            this.relationFK__Items__DistrictI__29221CFB = new global::System.Data.DataRelation("FK__Items__DistrictI__29221CFB", new global::System.Data.DataColumn[] {
+                        this.tableDistricts.DistrictIDColumn}, new global::System.Data.DataColumn[] {
+                        this.tableItems.DistrictIDColumn}, false);
+            this.Relations.Add(this.relationFK__Items__DistrictI__29221CFB);
+            this.relationFK__Archive__Distric__2A164134 = new global::System.Data.DataRelation("FK__Archive__Distric__2A164134", new global::System.Data.DataColumn[] {
+                        this.tableDistricts.DistrictIDColumn}, new global::System.Data.DataColumn[] {
+                        this.tableArchive.DistrictIDColumn}, false);
+            this.Relations.Add(this.relationFK__Archive__Distric__2A164134);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -371,6 +371,8 @@ namespace Kursach {
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class DistrictsDataTable : global::System.Data.TypedTableBase<DistrictsRow> {
             
+            private global::System.Data.DataColumn columnDistrictID;
+            
             private global::System.Data.DataColumn columnDistrict;
             
             private global::System.Data.DataColumn columnStreet;
@@ -406,6 +408,14 @@ namespace Kursach {
             protected DistrictsDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn DistrictIDColumn {
+                get {
+                    return this.columnDistrictID;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -464,6 +474,7 @@ namespace Kursach {
             public DistrictsRow AddDistrictsRow(string District, string Street) {
                 DistrictsRow rowDistrictsRow = ((DistrictsRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
+                        null,
                         District,
                         Street};
                 rowDistrictsRow.ItemArray = columnValuesArray;
@@ -473,9 +484,9 @@ namespace Kursach {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public DistrictsRow FindByDistrict(string District) {
+            public DistrictsRow FindByDistrictID(int DistrictID) {
                 return ((DistrictsRow)(this.Rows.Find(new object[] {
-                            District})));
+                            DistrictID})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -495,6 +506,7 @@ namespace Kursach {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             internal void InitVars() {
+                this.columnDistrictID = base.Columns["DistrictID"];
                 this.columnDistrict = base.Columns["District"];
                 this.columnStreet = base.Columns["Street"];
             }
@@ -502,16 +514,22 @@ namespace Kursach {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             private void InitClass() {
+                this.columnDistrictID = new global::System.Data.DataColumn("DistrictID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDistrictID);
                 this.columnDistrict = new global::System.Data.DataColumn("District", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDistrict);
                 this.columnStreet = new global::System.Data.DataColumn("Street", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnStreet);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnDistrict}, true));
+                                this.columnDistrictID}, true));
+                this.columnDistrictID.AutoIncrement = true;
+                this.columnDistrictID.AutoIncrementSeed = -1;
+                this.columnDistrictID.AutoIncrementStep = -1;
+                this.columnDistrictID.AllowDBNull = false;
+                this.columnDistrictID.ReadOnly = true;
+                this.columnDistrictID.Unique = true;
                 this.columnDistrict.AllowDBNull = false;
-                this.columnDistrict.Unique = true;
                 this.columnDistrict.MaxLength = 30;
-                this.columnStreet.AllowDBNull = false;
                 this.columnStreet.MaxLength = 30;
             }
             
@@ -656,7 +674,7 @@ namespace Kursach {
             
             private global::System.Data.DataColumn columnDescription;
             
-            private global::System.Data.DataColumn columnDistrict;
+            private global::System.Data.DataColumn columnDistrictID;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
@@ -733,9 +751,9 @@ namespace Kursach {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn DistrictColumn {
+            public global::System.Data.DataColumn DistrictIDColumn {
                 get {
-                    return this.columnDistrict;
+                    return this.columnDistrictID;
                 }
             }
             
@@ -776,7 +794,7 @@ namespace Kursach {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public ItemsRow AddItemsRow(string Item, System.DateTime DateFound, System.DateTime DateBrought, string Description, DistrictsRow parentDistrictsRowByFK__Items__District__49C3F6B7) {
+            public ItemsRow AddItemsRow(string Item, System.DateTime DateFound, System.DateTime DateBrought, string Description, DistrictsRow parentDistrictsRowByFK__Items__DistrictI__29221CFB) {
                 ItemsRow rowItemsRow = ((ItemsRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -785,8 +803,8 @@ namespace Kursach {
                         DateBrought,
                         Description,
                         null};
-                if ((parentDistrictsRowByFK__Items__District__49C3F6B7 != null)) {
-                    columnValuesArray[5] = parentDistrictsRowByFK__Items__District__49C3F6B7[0];
+                if ((parentDistrictsRowByFK__Items__DistrictI__29221CFB != null)) {
+                    columnValuesArray[5] = parentDistrictsRowByFK__Items__DistrictI__29221CFB[0];
                 }
                 rowItemsRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowItemsRow);
@@ -822,7 +840,7 @@ namespace Kursach {
                 this.columnDateFound = base.Columns["DateFound"];
                 this.columnDateBrought = base.Columns["DateBrought"];
                 this.columnDescription = base.Columns["Description"];
-                this.columnDistrict = base.Columns["District"];
+                this.columnDistrictID = base.Columns["DistrictID"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -842,8 +860,8 @@ namespace Kursach {
                 base.Columns.Add(this.columnDateBrought);
                 this.columnDescription = new global::System.Data.DataColumn("Description", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDescription);
-                this.columnDistrict = new global::System.Data.DataColumn("District", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnDistrict);
+                this.columnDistrictID = new global::System.Data.DataColumn("DistrictID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDistrictID);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnItemID}, true));
                 this.columnItemID.AutoIncrement = true;
@@ -856,7 +874,6 @@ namespace Kursach {
                 this.columnItem.MaxLength = 50;
                 this.columnDateFound.AllowDBNull = false;
                 this.columnDescription.MaxLength = 300;
-                this.columnDistrict.MaxLength = 30;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1000,7 +1017,7 @@ namespace Kursach {
             
             private global::System.Data.DataColumn columnDateTaken;
             
-            private global::System.Data.DataColumn columnDistrict;
+            private global::System.Data.DataColumn columnDistrictID;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
@@ -1077,9 +1094,9 @@ namespace Kursach {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn DistrictColumn {
+            public global::System.Data.DataColumn DistrictIDColumn {
                 get {
-                    return this.columnDistrict;
+                    return this.columnDistrictID;
                 }
             }
             
@@ -1120,7 +1137,7 @@ namespace Kursach {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public ArchiveRow AddArchiveRow(int ItemID, string Item, System.DateTime DateFound, System.DateTime DateBrought, System.DateTime DateTaken, DistrictsRow parentDistrictsRowByFK__Archive__Distric__14270015) {
+            public ArchiveRow AddArchiveRow(int ItemID, string Item, System.DateTime DateFound, System.DateTime DateBrought, System.DateTime DateTaken, DistrictsRow parentDistrictsRowByFK__Archive__Distric__2A164134) {
                 ArchiveRow rowArchiveRow = ((ArchiveRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         ItemID,
@@ -1129,8 +1146,8 @@ namespace Kursach {
                         DateBrought,
                         DateTaken,
                         null};
-                if ((parentDistrictsRowByFK__Archive__Distric__14270015 != null)) {
-                    columnValuesArray[5] = parentDistrictsRowByFK__Archive__Distric__14270015[0];
+                if ((parentDistrictsRowByFK__Archive__Distric__2A164134 != null)) {
+                    columnValuesArray[5] = parentDistrictsRowByFK__Archive__Distric__2A164134[0];
                 }
                 rowArchiveRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowArchiveRow);
@@ -1166,7 +1183,7 @@ namespace Kursach {
                 this.columnDateFound = base.Columns["DateFound"];
                 this.columnDateBrought = base.Columns["DateBrought"];
                 this.columnDateTaken = base.Columns["DateTaken"];
-                this.columnDistrict = base.Columns["District"];
+                this.columnDistrictID = base.Columns["DistrictID"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1186,14 +1203,18 @@ namespace Kursach {
                 base.Columns.Add(this.columnDateBrought);
                 this.columnDateTaken = new global::System.Data.DataColumn("DateTaken", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDateTaken);
-                this.columnDistrict = new global::System.Data.DataColumn("District", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnDistrict);
+                this.columnDistrictID = new global::System.Data.DataColumn("DistrictID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDistrictID);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnItemID}, true));
                 this.columnItemID.AllowDBNull = false;
                 this.columnItemID.Unique = true;
+                this.columnItem.AllowDBNull = false;
                 this.columnItem.MaxLength = 50;
-                this.columnDistrict.MaxLength = 30;
+                this.columnDateFound.AllowDBNull = false;
+                this.columnDateBrought.AllowDBNull = false;
+                this.columnDateTaken.AllowDBNull = false;
+                this.columnDistrictID.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1336,6 +1357,17 @@ namespace Kursach {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int DistrictID {
+                get {
+                    return ((int)(this[this.tableDistricts.DistrictIDColumn]));
+                }
+                set {
+                    this[this.tableDistricts.DistrictIDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public string District {
                 get {
                     return ((string)(this[this.tableDistricts.DistrictColumn]));
@@ -1349,7 +1381,12 @@ namespace Kursach {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public string Street {
                 get {
-                    return ((string)(this[this.tableDistricts.StreetColumn]));
+                    try {
+                        return ((string)(this[this.tableDistricts.StreetColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Street\' в таблице \'Districts\' равно DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableDistricts.StreetColumn] = value;
@@ -1358,23 +1395,35 @@ namespace Kursach {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsStreetNull() {
+                return this.IsNull(this.tableDistricts.StreetColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetStreetNull() {
+                this[this.tableDistricts.StreetColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public ItemsRow[] GetItemsRows() {
-                if ((this.Table.ChildRelations["FK__Items__District__49C3F6B7"] == null)) {
+                if ((this.Table.ChildRelations["FK__Items__DistrictI__29221CFB"] == null)) {
                     return new ItemsRow[0];
                 }
                 else {
-                    return ((ItemsRow[])(base.GetChildRows(this.Table.ChildRelations["FK__Items__District__49C3F6B7"])));
+                    return ((ItemsRow[])(base.GetChildRows(this.Table.ChildRelations["FK__Items__DistrictI__29221CFB"])));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public ArchiveRow[] GetArchiveRows() {
-                if ((this.Table.ChildRelations["FK__Archive__Distric__14270015"] == null)) {
+                if ((this.Table.ChildRelations["FK__Archive__Distric__2A164134"] == null)) {
                     return new ArchiveRow[0];
                 }
                 else {
-                    return ((ArchiveRow[])(base.GetChildRows(this.Table.ChildRelations["FK__Archive__Distric__14270015"])));
+                    return ((ArchiveRow[])(base.GetChildRows(this.Table.ChildRelations["FK__Archive__Distric__2A164134"])));
                 }
             }
         }
@@ -1460,17 +1509,17 @@ namespace Kursach {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string District {
+            public int DistrictID {
                 get {
                     try {
-                        return ((string)(this[this.tableItems.DistrictColumn]));
+                        return ((int)(this[this.tableItems.DistrictIDColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'District\' в таблице \'Items\' равно DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'DistrictID\' в таблице \'Items\' равно DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableItems.DistrictColumn] = value;
+                    this[this.tableItems.DistrictIDColumn] = value;
                 }
             }
             
@@ -1478,10 +1527,10 @@ namespace Kursach {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public DistrictsRow DistrictsRow {
                 get {
-                    return ((DistrictsRow)(this.GetParentRow(this.Table.ParentRelations["FK__Items__District__49C3F6B7"])));
+                    return ((DistrictsRow)(this.GetParentRow(this.Table.ParentRelations["FK__Items__DistrictI__29221CFB"])));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK__Items__District__49C3F6B7"]);
+                    this.SetParentRow(value, this.Table.ParentRelations["FK__Items__DistrictI__29221CFB"]);
                 }
             }
             
@@ -1511,14 +1560,14 @@ namespace Kursach {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsDistrictNull() {
-                return this.IsNull(this.tableItems.DistrictColumn);
+            public bool IsDistrictIDNull() {
+                return this.IsNull(this.tableItems.DistrictIDColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetDistrictNull() {
-                this[this.tableItems.DistrictColumn] = global::System.Convert.DBNull;
+            public void SetDistrictIDNull() {
+                this[this.tableItems.DistrictIDColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -1551,12 +1600,7 @@ namespace Kursach {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public string Item {
                 get {
-                    try {
-                        return ((string)(this[this.tableArchive.ItemColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Item\' в таблице \'Archive\' равно DBNull.", e);
-                    }
+                    return ((string)(this[this.tableArchive.ItemColumn]));
                 }
                 set {
                     this[this.tableArchive.ItemColumn] = value;
@@ -1567,12 +1611,7 @@ namespace Kursach {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public System.DateTime DateFound {
                 get {
-                    try {
-                        return ((global::System.DateTime)(this[this.tableArchive.DateFoundColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'DateFound\' в таблице \'Archive\' равно DBNull.", e);
-                    }
+                    return ((global::System.DateTime)(this[this.tableArchive.DateFoundColumn]));
                 }
                 set {
                     this[this.tableArchive.DateFoundColumn] = value;
@@ -1583,12 +1622,7 @@ namespace Kursach {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public System.DateTime DateBrought {
                 get {
-                    try {
-                        return ((global::System.DateTime)(this[this.tableArchive.DateBroughtColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'DateBrought\' в таблице \'Archive\' равно DBNull.", e);
-                    }
+                    return ((global::System.DateTime)(this[this.tableArchive.DateBroughtColumn]));
                 }
                 set {
                     this[this.tableArchive.DateBroughtColumn] = value;
@@ -1599,12 +1633,7 @@ namespace Kursach {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public System.DateTime DateTaken {
                 get {
-                    try {
-                        return ((global::System.DateTime)(this[this.tableArchive.DateTakenColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'DateTaken\' в таблице \'Archive\' равно DBNull.", e);
-                    }
+                    return ((global::System.DateTime)(this[this.tableArchive.DateTakenColumn]));
                 }
                 set {
                     this[this.tableArchive.DateTakenColumn] = value;
@@ -1613,17 +1642,12 @@ namespace Kursach {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string District {
+            public int DistrictID {
                 get {
-                    try {
-                        return ((string)(this[this.tableArchive.DistrictColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'District\' в таблице \'Archive\' равно DBNull.", e);
-                    }
+                    return ((int)(this[this.tableArchive.DistrictIDColumn]));
                 }
                 set {
-                    this[this.tableArchive.DistrictColumn] = value;
+                    this[this.tableArchive.DistrictIDColumn] = value;
                 }
             }
             
@@ -1631,71 +1655,11 @@ namespace Kursach {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public DistrictsRow DistrictsRow {
                 get {
-                    return ((DistrictsRow)(this.GetParentRow(this.Table.ParentRelations["FK__Archive__Distric__14270015"])));
+                    return ((DistrictsRow)(this.GetParentRow(this.Table.ParentRelations["FK__Archive__Distric__2A164134"])));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK__Archive__Distric__14270015"]);
+                    this.SetParentRow(value, this.Table.ParentRelations["FK__Archive__Distric__2A164134"]);
                 }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsItemNull() {
-                return this.IsNull(this.tableArchive.ItemColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetItemNull() {
-                this[this.tableArchive.ItemColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsDateFoundNull() {
-                return this.IsNull(this.tableArchive.DateFoundColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetDateFoundNull() {
-                this[this.tableArchive.DateFoundColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsDateBroughtNull() {
-                return this.IsNull(this.tableArchive.DateBroughtColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetDateBroughtNull() {
-                this[this.tableArchive.DateBroughtColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsDateTakenNull() {
-                return this.IsNull(this.tableArchive.DateTakenColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetDateTakenNull() {
-                this[this.tableArchive.DateTakenColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsDistrictNull() {
-                return this.IsNull(this.tableArchive.DistrictColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetDistrictNull() {
-                this[this.tableArchive.DistrictColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -1926,33 +1890,40 @@ namespace Kursach.DataSetBNTableAdapters {
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "Districts";
+            tableMapping.ColumnMappings.Add("DistrictID", "DistrictID");
             tableMapping.ColumnMappings.Add("District", "District");
             tableMapping.ColumnMappings.Add("Street", "Street");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[Districts] WHERE (([District] = @Original_District) AND ([Stre" +
-                "et] = @Original_Street))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[Districts] WHERE (([DistrictID] = @Original_DistrictID) AND ([" +
+                "District] = @Original_District) AND ((@IsNull_Street = 1 AND [Street] IS NULL) O" +
+                "R ([Street] = @Original_Street)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DistrictID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DistrictID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_District", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "District", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Street", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Street", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Street", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Street", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
             this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Districts] ([District], [Street]) VALUES (@District, @Street);" +
-                "\r\nSELECT District, Street FROM Districts WHERE (District = @District)";
+                "\r\nSELECT DistrictID, District, Street FROM Districts WHERE (DistrictID = SCOPE_I" +
+                "DENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@District", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "District", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Street", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Street", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[Districts] SET [District] = @District, [Street] = @Street WHERE (([" +
-                "District] = @Original_District) AND ([Street] = @Original_Street));\r\nSELECT Dist" +
-                "rict, Street FROM Districts WHERE (District = @District)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Districts] SET [District] = @District, [Street] = @Street WHERE (([DistrictID] = @Original_DistrictID) AND ([District] = @Original_District) AND ((@IsNull_Street = 1 AND [Street] IS NULL) OR ([Street] = @Original_Street)));
+SELECT DistrictID, District, Street FROM Districts WHERE (DistrictID = @DistrictID)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@District", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "District", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Street", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Street", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DistrictID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DistrictID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_District", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "District", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Street", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Street", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Street", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Street", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DistrictID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "DistrictID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1968,7 +1939,7 @@ namespace Kursach.DataSetBNTableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT District, Street FROM dbo.Districts";
+            this._commandCollection[0].CommandText = "SELECT DistrictID, District, Street FROM dbo.Districts";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -2029,18 +2000,21 @@ namespace Kursach.DataSetBNTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(string Original_District, string Original_Street) {
+        public virtual int Delete(int Original_DistrictID, string Original_District, string Original_Street) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_DistrictID));
             if ((Original_District == null)) {
                 throw new global::System.ArgumentNullException("Original_District");
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[0].Value = ((string)(Original_District));
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((string)(Original_District));
             }
             if ((Original_Street == null)) {
-                throw new global::System.ArgumentNullException("Original_Street");
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((string)(Original_Street));
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((string)(Original_Street));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -2070,7 +2044,7 @@ namespace Kursach.DataSetBNTableAdapters {
                 this.Adapter.InsertCommand.Parameters[0].Value = ((string)(District));
             }
             if ((Street == null)) {
-                throw new global::System.ArgumentNullException("Street");
+                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.InsertCommand.Parameters[1].Value = ((string)(Street));
@@ -2095,7 +2069,7 @@ namespace Kursach.DataSetBNTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string District, string Street, string Original_District, string Original_Street) {
+        public virtual int Update(string District, string Street, int Original_DistrictID, string Original_District, string Original_Street, int DistrictID) {
             if ((District == null)) {
                 throw new global::System.ArgumentNullException("District");
             }
@@ -2103,23 +2077,27 @@ namespace Kursach.DataSetBNTableAdapters {
                 this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(District));
             }
             if ((Street == null)) {
-                throw new global::System.ArgumentNullException("Street");
+                this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(Street));
             }
+            this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(Original_DistrictID));
             if ((Original_District == null)) {
                 throw new global::System.ArgumentNullException("Original_District");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(Original_District));
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(Original_District));
             }
             if ((Original_Street == null)) {
-                throw new global::System.ArgumentNullException("Original_Street");
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(Original_Street));
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(Original_Street));
             }
+            this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(DistrictID));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -2140,8 +2118,8 @@ namespace Kursach.DataSetBNTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Street, string Original_District, string Original_Street) {
-            return this.Update(Original_District, Street, Original_District, Original_Street);
+        public virtual int Update(string District, string Street, int Original_DistrictID, string Original_District, string Original_Street) {
+            return this.Update(District, Street, Original_DistrictID, Original_District, Original_Street, Original_DistrictID);
         }
     }
     
@@ -2271,11 +2249,11 @@ namespace Kursach.DataSetBNTableAdapters {
             tableMapping.ColumnMappings.Add("DateFound", "DateFound");
             tableMapping.ColumnMappings.Add("DateBrought", "DateBrought");
             tableMapping.ColumnMappings.Add("Description", "Description");
-            tableMapping.ColumnMappings.Add("District", "District");
+            tableMapping.ColumnMappings.Add("DistrictID", "DistrictID");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Items] WHERE (([ItemID] = @Original_ItemID) AND ([Item] = @Original_Item) AND ([DateFound] = @Original_DateFound) AND ((@IsNull_DateBrought = 1 AND [DateBrought] IS NULL) OR ([DateBrought] = @Original_DateBrought)) AND ((@IsNull_Description = 1 AND [Description] IS NULL) OR ([Description] = @Original_Description)) AND ((@IsNull_District = 1 AND [District] IS NULL) OR ([District] = @Original_District)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Items] WHERE (([ItemID] = @Original_ItemID) AND ([Item] = @Original_Item) AND ([DateFound] = @Original_DateFound) AND ((@IsNull_DateBrought = 1 AND [DateBrought] IS NULL) OR ([DateBrought] = @Original_DateBrought)) AND ((@IsNull_Description = 1 AND [Description] IS NULL) OR ([Description] = @Original_Description)) AND ((@IsNull_DistrictID = 1 AND [DistrictID] IS NULL) OR ([DistrictID] = @Original_DistrictID)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ItemID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ItemID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Item", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Item", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -2284,28 +2262,28 @@ namespace Kursach.DataSetBNTableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DateBrought", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DateBrought", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Description", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Description", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Description", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Description", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_District", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "District", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_District", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "District", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_DistrictID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DistrictID", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DistrictID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DistrictID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Items] ([Item], [DateFound], [DateBrought], [Description], [District]) VALUES (@Item, @DateFound, @DateBrought, @Description, @District);
-SELECT ItemID, Item, DateFound, DateBrought, Description, District FROM Items WHERE (ItemID = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Items] ([Item], [DateFound], [DateBrought], [Description], [DistrictID]) VALUES (@Item, @DateFound, @DateBrought, @Description, @DistrictID);
+SELECT ItemID, Item, DateFound, DateBrought, Description, DistrictID FROM Items WHERE (ItemID = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Item", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Item", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DateFound", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DateFound", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DateBrought", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DateBrought", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Description", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Description", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@District", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "District", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DistrictID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DistrictID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Items] SET [Item] = @Item, [DateFound] = @DateFound, [DateBrought] = @DateBrought, [Description] = @Description, [District] = @District WHERE (([ItemID] = @Original_ItemID) AND ([Item] = @Original_Item) AND ([DateFound] = @Original_DateFound) AND ((@IsNull_DateBrought = 1 AND [DateBrought] IS NULL) OR ([DateBrought] = @Original_DateBrought)) AND ((@IsNull_Description = 1 AND [Description] IS NULL) OR ([Description] = @Original_Description)) AND ((@IsNull_District = 1 AND [District] IS NULL) OR ([District] = @Original_District)));
-SELECT ItemID, Item, DateFound, DateBrought, Description, District FROM Items WHERE (ItemID = @ItemID)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Items] SET [Item] = @Item, [DateFound] = @DateFound, [DateBrought] = @DateBrought, [Description] = @Description, [DistrictID] = @DistrictID WHERE (([ItemID] = @Original_ItemID) AND ([Item] = @Original_Item) AND ([DateFound] = @Original_DateFound) AND ((@IsNull_DateBrought = 1 AND [DateBrought] IS NULL) OR ([DateBrought] = @Original_DateBrought)) AND ((@IsNull_Description = 1 AND [Description] IS NULL) OR ([Description] = @Original_Description)) AND ((@IsNull_DistrictID = 1 AND [DistrictID] IS NULL) OR ([DistrictID] = @Original_DistrictID)));
+SELECT ItemID, Item, DateFound, DateBrought, Description, DistrictID FROM Items WHERE (ItemID = @ItemID)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Item", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Item", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DateFound", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DateFound", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DateBrought", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DateBrought", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Description", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Description", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@District", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "District", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DistrictID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DistrictID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ItemID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ItemID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Item", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Item", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DateFound", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DateFound", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -2313,8 +2291,8 @@ SELECT ItemID, Item, DateFound, DateBrought, Description, District FROM Items WH
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DateBrought", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DateBrought", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Description", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Description", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Description", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Description", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_District", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "District", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_District", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "District", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_DistrictID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DistrictID", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DistrictID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DistrictID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ItemID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ItemID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -2331,8 +2309,8 @@ SELECT ItemID, Item, DateFound, DateBrought, Description, District FROM Items WH
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT ItemID, Item, DateFound, DateBrought, Description, District FROM dbo.Items" +
-                "";
+            this._commandCollection[0].CommandText = "SELECT ItemID, Item, DateFound, DateBrought, Description, DistrictID FROM dbo.Ite" +
+                "ms";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -2393,7 +2371,7 @@ SELECT ItemID, Item, DateFound, DateBrought, Description, District FROM Items WH
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_ItemID, string Original_Item, System.DateTime Original_DateFound, global::System.Nullable<global::System.DateTime> Original_DateBrought, string Original_Description, string Original_District) {
+        public virtual int Delete(int Original_ItemID, string Original_Item, System.DateTime Original_DateFound, global::System.Nullable<global::System.DateTime> Original_DateBrought, string Original_Description, global::System.Nullable<int> Original_DistrictID) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_ItemID));
             if ((Original_Item == null)) {
                 throw new global::System.ArgumentNullException("Original_Item");
@@ -2418,13 +2396,13 @@ SELECT ItemID, Item, DateFound, DateBrought, Description, District FROM Items WH
                 this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
                 this.Adapter.DeleteCommand.Parameters[6].Value = ((string)(Original_Description));
             }
-            if ((Original_District == null)) {
-                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[8].Value = global::System.DBNull.Value;
+            if ((Original_DistrictID.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[8].Value = ((int)(Original_DistrictID.Value));
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[8].Value = ((string)(Original_District));
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -2446,7 +2424,7 @@ SELECT ItemID, Item, DateFound, DateBrought, Description, District FROM Items WH
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string Item, System.DateTime DateFound, global::System.Nullable<global::System.DateTime> DateBrought, string Description, string District) {
+        public virtual int Insert(string Item, System.DateTime DateFound, global::System.Nullable<global::System.DateTime> DateBrought, string Description, global::System.Nullable<int> DistrictID) {
             if ((Item == null)) {
                 throw new global::System.ArgumentNullException("Item");
             }
@@ -2466,11 +2444,11 @@ SELECT ItemID, Item, DateFound, DateBrought, Description, District FROM Items WH
             else {
                 this.Adapter.InsertCommand.Parameters[3].Value = ((string)(Description));
             }
-            if ((District == null)) {
-                this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
+            if ((DistrictID.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[4].Value = ((int)(DistrictID.Value));
             }
             else {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(District));
+                this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -2492,7 +2470,7 @@ SELECT ItemID, Item, DateFound, DateBrought, Description, District FROM Items WH
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Item, System.DateTime DateFound, global::System.Nullable<global::System.DateTime> DateBrought, string Description, string District, int Original_ItemID, string Original_Item, System.DateTime Original_DateFound, global::System.Nullable<global::System.DateTime> Original_DateBrought, string Original_Description, string Original_District, int ItemID) {
+        public virtual int Update(string Item, System.DateTime DateFound, global::System.Nullable<global::System.DateTime> DateBrought, string Description, global::System.Nullable<int> DistrictID, int Original_ItemID, string Original_Item, System.DateTime Original_DateFound, global::System.Nullable<global::System.DateTime> Original_DateBrought, string Original_Description, global::System.Nullable<int> Original_DistrictID, int ItemID) {
             if ((Item == null)) {
                 throw new global::System.ArgumentNullException("Item");
             }
@@ -2512,11 +2490,11 @@ SELECT ItemID, Item, DateFound, DateBrought, Description, District FROM Items WH
             else {
                 this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(Description));
             }
-            if ((District == null)) {
-                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
+            if ((DistrictID.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(DistrictID.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(District));
+                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
             this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Original_ItemID));
             if ((Original_Item == null)) {
@@ -2542,13 +2520,13 @@ SELECT ItemID, Item, DateFound, DateBrought, Description, District FROM Items WH
                 this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(0));
                 this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(Original_Description));
             }
-            if ((Original_District == null)) {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
+            if ((Original_DistrictID.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((int)(Original_DistrictID.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(Original_District));
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
             }
             this.Adapter.UpdateCommand.Parameters[14].Value = ((int)(ItemID));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
@@ -2571,8 +2549,8 @@ SELECT ItemID, Item, DateFound, DateBrought, Description, District FROM Items WH
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Item, System.DateTime DateFound, global::System.Nullable<global::System.DateTime> DateBrought, string Description, string District, int Original_ItemID, string Original_Item, System.DateTime Original_DateFound, global::System.Nullable<global::System.DateTime> Original_DateBrought, string Original_Description, string Original_District) {
-            return this.Update(Item, DateFound, DateBrought, Description, District, Original_ItemID, Original_Item, Original_DateFound, Original_DateBrought, Original_Description, Original_District, Original_ItemID);
+        public virtual int Update(string Item, System.DateTime DateFound, global::System.Nullable<global::System.DateTime> DateBrought, string Description, global::System.Nullable<int> DistrictID, int Original_ItemID, string Original_Item, System.DateTime Original_DateFound, global::System.Nullable<global::System.DateTime> Original_DateBrought, string Original_Description, global::System.Nullable<int> Original_DistrictID) {
+            return this.Update(Item, DateFound, DateBrought, Description, DistrictID, Original_ItemID, Original_Item, Original_DateFound, Original_DateBrought, Original_Description, Original_DistrictID, Original_ItemID);
         }
     }
     
@@ -2702,56 +2680,46 @@ SELECT ItemID, Item, DateFound, DateBrought, Description, District FROM Items WH
             tableMapping.ColumnMappings.Add("DateFound", "DateFound");
             tableMapping.ColumnMappings.Add("DateBrought", "DateBrought");
             tableMapping.ColumnMappings.Add("DateTaken", "DateTaken");
-            tableMapping.ColumnMappings.Add("District", "District");
+            tableMapping.ColumnMappings.Add("DistrictID", "DistrictID");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Archive] WHERE (([ItemID] = @Original_ItemID) AND ((@IsNull_Item = 1 AND [Item] IS NULL) OR ([Item] = @Original_Item)) AND ((@IsNull_DateFound = 1 AND [DateFound] IS NULL) OR ([DateFound] = @Original_DateFound)) AND ((@IsNull_DateBrought = 1 AND [DateBrought] IS NULL) OR ([DateBrought] = @Original_DateBrought)) AND ((@IsNull_DateTaken = 1 AND [DateTaken] IS NULL) OR ([DateTaken] = @Original_DateTaken)) AND ((@IsNull_District = 1 AND [District] IS NULL) OR ([District] = @Original_District)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Archive] WHERE (([ItemID] = @Original_ItemID) AND ([Item] = @Original_Item) AND ([DateFound] = @Original_DateFound) AND ([DateBrought] = @Original_DateBrought) AND ([DateTaken] = @Original_DateTaken) AND ([DistrictID] = @Original_DistrictID))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ItemID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ItemID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Item", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Item", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Item", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Item", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_DateFound", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DateFound", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DateFound", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DateFound", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_DateBrought", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DateBrought", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DateBrought", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DateBrought", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_DateTaken", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DateTaken", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DateTaken", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DateTaken", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_District", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "District", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_District", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "District", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DistrictID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DistrictID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Archive] ([ItemID], [Item], [DateFound], [DateBrought], [DateTaken], [District]) VALUES (@ItemID, @Item, @DateFound, @DateBrought, @DateTaken, @District);
-SELECT ItemID, Item, DateFound, DateBrought, DateTaken, District FROM Archive WHERE (ItemID = @ItemID)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Archive] ([ItemID], [Item], [DateFound], [DateBrought], [DateTaken], [DistrictID]) VALUES (@ItemID, @Item, @DateFound, @DateBrought, @DateTaken, @DistrictID);
+SELECT ItemID, Item, DateFound, DateBrought, DateTaken, DistrictID FROM Archive WHERE (ItemID = @ItemID)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ItemID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ItemID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Item", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Item", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DateFound", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DateFound", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DateBrought", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DateBrought", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DateTaken", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DateTaken", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@District", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "District", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DistrictID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DistrictID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Archive] SET [ItemID] = @ItemID, [Item] = @Item, [DateFound] = @DateFound, [DateBrought] = @DateBrought, [DateTaken] = @DateTaken, [District] = @District WHERE (([ItemID] = @Original_ItemID) AND ((@IsNull_Item = 1 AND [Item] IS NULL) OR ([Item] = @Original_Item)) AND ((@IsNull_DateFound = 1 AND [DateFound] IS NULL) OR ([DateFound] = @Original_DateFound)) AND ((@IsNull_DateBrought = 1 AND [DateBrought] IS NULL) OR ([DateBrought] = @Original_DateBrought)) AND ((@IsNull_DateTaken = 1 AND [DateTaken] IS NULL) OR ([DateTaken] = @Original_DateTaken)) AND ((@IsNull_District = 1 AND [District] IS NULL) OR ([District] = @Original_District)));
-SELECT ItemID, Item, DateFound, DateBrought, DateTaken, District FROM Archive WHERE (ItemID = @ItemID)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Archive] SET [ItemID] = @ItemID, [Item] = @Item, [DateFound] = @DateFound, [DateBrought] = @DateBrought, [DateTaken] = @DateTaken, [DistrictID] = @DistrictID WHERE (([ItemID] = @Original_ItemID) AND ([Item] = @Original_Item) AND ([DateFound] = @Original_DateFound) AND ([DateBrought] = @Original_DateBrought) AND ([DateTaken] = @Original_DateTaken) AND ([DistrictID] = @Original_DistrictID));
+SELECT ItemID, Item, DateFound, DateBrought, DateTaken, DistrictID FROM Archive WHERE (ItemID = @ItemID)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ItemID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ItemID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Item", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Item", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DateFound", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DateFound", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DateBrought", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DateBrought", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DateTaken", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DateTaken", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@District", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "District", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DistrictID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DistrictID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ItemID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ItemID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Item", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Item", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Item", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Item", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_DateFound", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DateFound", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DateFound", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DateFound", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_DateBrought", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DateBrought", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DateBrought", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DateBrought", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_DateTaken", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DateTaken", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DateTaken", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DateTaken", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_District", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "District", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_District", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "District", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DistrictID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DistrictID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2767,8 +2735,8 @@ SELECT ItemID, Item, DateFound, DateBrought, DateTaken, District FROM Archive WH
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT ItemID, Item, DateFound, DateBrought, DateTaken, District FROM dbo.Archive" +
-                "";
+            this._commandCollection[0].CommandText = "SELECT ItemID, Item, DateFound, DateBrought, DateTaken, DistrictID FROM dbo.Archi" +
+                "ve";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -2829,48 +2797,18 @@ SELECT ItemID, Item, DateFound, DateBrought, DateTaken, District FROM Archive WH
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_ItemID, string Original_Item, global::System.Nullable<global::System.DateTime> Original_DateFound, global::System.Nullable<global::System.DateTime> Original_DateBrought, global::System.Nullable<global::System.DateTime> Original_DateTaken, string Original_District) {
+        public virtual int Delete(int Original_ItemID, string Original_Item, System.DateTime Original_DateFound, System.DateTime Original_DateBrought, System.DateTime Original_DateTaken, int Original_DistrictID) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_ItemID));
             if ((Original_Item == null)) {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("Original_Item");
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_Item));
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((string)(Original_Item));
             }
-            if ((Original_DateFound.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((System.DateTime)(Original_DateFound.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
-            }
-            if ((Original_DateBrought.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[6].Value = ((System.DateTime)(Original_DateBrought.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[6].Value = global::System.DBNull.Value;
-            }
-            if ((Original_DateTaken.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[8].Value = ((System.DateTime)(Original_DateTaken.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[8].Value = global::System.DBNull.Value;
-            }
-            if ((Original_District == null)) {
-                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[10].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[10].Value = ((string)(Original_District));
-            }
+            this.Adapter.DeleteCommand.Parameters[2].Value = ((System.DateTime)(Original_DateFound));
+            this.Adapter.DeleteCommand.Parameters[3].Value = ((System.DateTime)(Original_DateBrought));
+            this.Adapter.DeleteCommand.Parameters[4].Value = ((System.DateTime)(Original_DateTaken));
+            this.Adapter.DeleteCommand.Parameters[5].Value = ((int)(Original_DistrictID));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -2891,38 +2829,18 @@ SELECT ItemID, Item, DateFound, DateBrought, DateTaken, District FROM Archive WH
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int ItemID, string Item, global::System.Nullable<global::System.DateTime> DateFound, global::System.Nullable<global::System.DateTime> DateBrought, global::System.Nullable<global::System.DateTime> DateTaken, string District) {
+        public virtual int Insert(int ItemID, string Item, System.DateTime DateFound, System.DateTime DateBrought, System.DateTime DateTaken, int DistrictID) {
             this.Adapter.InsertCommand.Parameters[0].Value = ((int)(ItemID));
             if ((Item == null)) {
-                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("Item");
             }
             else {
                 this.Adapter.InsertCommand.Parameters[1].Value = ((string)(Item));
             }
-            if ((DateFound.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((System.DateTime)(DateFound.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
-            }
-            if ((DateBrought.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((System.DateTime)(DateBrought.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
-            }
-            if ((DateTaken.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((System.DateTime)(DateTaken.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
-            }
-            if ((District == null)) {
-                this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(District));
-            }
+            this.Adapter.InsertCommand.Parameters[2].Value = ((System.DateTime)(DateFound));
+            this.Adapter.InsertCommand.Parameters[3].Value = ((System.DateTime)(DateBrought));
+            this.Adapter.InsertCommand.Parameters[4].Value = ((System.DateTime)(DateTaken));
+            this.Adapter.InsertCommand.Parameters[5].Value = ((int)(DistrictID));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -2943,79 +2861,29 @@ SELECT ItemID, Item, DateFound, DateBrought, DateTaken, District FROM Archive WH
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int ItemID, string Item, global::System.Nullable<global::System.DateTime> DateFound, global::System.Nullable<global::System.DateTime> DateBrought, global::System.Nullable<global::System.DateTime> DateTaken, string District, int Original_ItemID, string Original_Item, global::System.Nullable<global::System.DateTime> Original_DateFound, global::System.Nullable<global::System.DateTime> Original_DateBrought, global::System.Nullable<global::System.DateTime> Original_DateTaken, string Original_District) {
+        public virtual int Update(int ItemID, string Item, System.DateTime DateFound, System.DateTime DateBrought, System.DateTime DateTaken, int DistrictID, int Original_ItemID, string Original_Item, System.DateTime Original_DateFound, System.DateTime Original_DateBrought, System.DateTime Original_DateTaken, int Original_DistrictID) {
             this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(ItemID));
             if ((Item == null)) {
-                this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("Item");
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(Item));
             }
-            if ((DateFound.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((System.DateTime)(DateFound.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
-            }
-            if ((DateBrought.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((System.DateTime)(DateBrought.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
-            }
-            if ((DateTaken.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((System.DateTime)(DateTaken.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
-            }
-            if ((District == null)) {
-                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(District));
-            }
+            this.Adapter.UpdateCommand.Parameters[2].Value = ((System.DateTime)(DateFound));
+            this.Adapter.UpdateCommand.Parameters[3].Value = ((System.DateTime)(DateBrought));
+            this.Adapter.UpdateCommand.Parameters[4].Value = ((System.DateTime)(DateTaken));
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(DistrictID));
             this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Original_ItemID));
             if ((Original_Item == null)) {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("Original_Item");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(Original_Item));
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(Original_Item));
             }
-            if ((Original_DateFound.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((System.DateTime)(Original_DateFound.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
-            }
-            if ((Original_DateBrought.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((System.DateTime)(Original_DateBrought.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
-            }
-            if ((Original_DateTaken.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((System.DateTime)(Original_DateTaken.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
-            }
-            if ((Original_District == null)) {
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((string)(Original_District));
-            }
+            this.Adapter.UpdateCommand.Parameters[8].Value = ((System.DateTime)(Original_DateFound));
+            this.Adapter.UpdateCommand.Parameters[9].Value = ((System.DateTime)(Original_DateBrought));
+            this.Adapter.UpdateCommand.Parameters[10].Value = ((System.DateTime)(Original_DateTaken));
+            this.Adapter.UpdateCommand.Parameters[11].Value = ((int)(Original_DistrictID));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -3036,8 +2904,8 @@ SELECT ItemID, Item, DateFound, DateBrought, DateTaken, District FROM Archive WH
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Item, global::System.Nullable<global::System.DateTime> DateFound, global::System.Nullable<global::System.DateTime> DateBrought, global::System.Nullable<global::System.DateTime> DateTaken, string District, int Original_ItemID, string Original_Item, global::System.Nullable<global::System.DateTime> Original_DateFound, global::System.Nullable<global::System.DateTime> Original_DateBrought, global::System.Nullable<global::System.DateTime> Original_DateTaken, string Original_District) {
-            return this.Update(Original_ItemID, Item, DateFound, DateBrought, DateTaken, District, Original_ItemID, Original_Item, Original_DateFound, Original_DateBrought, Original_DateTaken, Original_District);
+        public virtual int Update(string Item, System.DateTime DateFound, System.DateTime DateBrought, System.DateTime DateTaken, int DistrictID, int Original_ItemID, string Original_Item, System.DateTime Original_DateFound, System.DateTime Original_DateBrought, System.DateTime Original_DateTaken, int Original_DistrictID) {
+            return this.Update(Original_ItemID, Item, DateFound, DateBrought, DateTaken, DistrictID, Original_ItemID, Original_Item, Original_DateFound, Original_DateBrought, Original_DateTaken, Original_DistrictID);
         }
     }
     

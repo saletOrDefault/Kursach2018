@@ -19,12 +19,7 @@ D:\Projects\Kursach\Kursach\obj\Debug\Kursach.csproj.ResolveComReference.cache
 D:\Программирование\Projects\Kursach\Kursach\bin\Debug\Kursach.exe.config
 D:\Программирование\Projects\Kursach\Kursach\bin\Debug\Kursach.exe
 D:\Программирование\Projects\Kursach\Kursach\bin\Debug\Kursach.pdb
-D:\Программирование\Projects\Kursach\Kursach\bin\Debug\Interop.WMPLib.dll
-D:\Программирование\Projects\Kursach\Kursach\bin\Debug\AxInterop.WMPLib.dll
 D:\Программирование\Projects\Kursach\Kursach\obj\Debug\Kursach.csprojAssemblyReference.cache
-D:\Программирование\Projects\Kursach\Kursach\obj\Debug\Interop.WMPLib.dll
-D:\Программирование\Projects\Kursach\Kursach\obj\Debug\AxInterop.WMPLib.dll
-D:\Программирование\Projects\Kursach\Kursach\obj\Debug\Kursach.csproj.ResolveComReference.cache
 D:\Программирование\Projects\Kursach\Kursach\obj\Debug\Kursach.Form1.resources
 D:\Программирование\Projects\Kursach\Kursach\obj\Debug\Kursach.Form2.resources
 D:\Программирование\Projects\Kursach\Kursach\obj\Debug\Kursach.Form3.resources

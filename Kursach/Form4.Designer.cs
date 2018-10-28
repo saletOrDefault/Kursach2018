@@ -36,13 +36,13 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.avi = new System.Windows.Forms.Label();
-            this.vah = new System.Windows.Forms.Label();
-            this.kir = new System.Windows.Forms.Label();
-            this.mos = new System.Windows.Forms.Label();
-            this.pri = new System.Windows.Forms.Label();
-            this.sov = new System.Windows.Forms.Label();
-            this.nsav = new System.Windows.Forms.Label();
+            this.avilab = new System.Windows.Forms.Label();
+            this.vahlab = new System.Windows.Forms.Label();
+            this.kirlab = new System.Windows.Forms.Label();
+            this.moslab = new System.Windows.Forms.Label();
+            this.prilab = new System.Windows.Forms.Label();
+            this.sovlab = new System.Windows.Forms.Label();
+            this.nsavlab = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -125,75 +125,75 @@
             this.label8.TabIndex = 8;
             this.label8.Text = "Советский";
             // 
-            // avi
+            // avilab
             // 
-            this.avi.AutoSize = true;
-            this.avi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.avi.Location = new System.Drawing.Point(233, 90);
-            this.avi.Name = "avi";
-            this.avi.Size = new System.Drawing.Size(41, 25);
-            this.avi.TabIndex = 9;
-            this.avi.Text = "0%";
+            this.avilab.AutoSize = true;
+            this.avilab.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.avilab.Location = new System.Drawing.Point(233, 90);
+            this.avilab.Name = "avilab";
+            this.avilab.Size = new System.Drawing.Size(41, 25);
+            this.avilab.TabIndex = 9;
+            this.avilab.Text = "0%";
             // 
-            // vah
+            // vahlab
             // 
-            this.vah.AutoSize = true;
-            this.vah.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.vah.Location = new System.Drawing.Point(233, 140);
-            this.vah.Name = "vah";
-            this.vah.Size = new System.Drawing.Size(41, 25);
-            this.vah.TabIndex = 10;
-            this.vah.Text = "0%";
+            this.vahlab.AutoSize = true;
+            this.vahlab.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.vahlab.Location = new System.Drawing.Point(233, 140);
+            this.vahlab.Name = "vahlab";
+            this.vahlab.Size = new System.Drawing.Size(41, 25);
+            this.vahlab.TabIndex = 10;
+            this.vahlab.Text = "0%";
             // 
-            // kir
+            // kirlab
             // 
-            this.kir.AutoSize = true;
-            this.kir.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.kir.Location = new System.Drawing.Point(233, 190);
-            this.kir.Name = "kir";
-            this.kir.Size = new System.Drawing.Size(41, 25);
-            this.kir.TabIndex = 11;
-            this.kir.Text = "0%";
+            this.kirlab.AutoSize = true;
+            this.kirlab.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.kirlab.Location = new System.Drawing.Point(233, 190);
+            this.kirlab.Name = "kirlab";
+            this.kirlab.Size = new System.Drawing.Size(41, 25);
+            this.kirlab.TabIndex = 11;
+            this.kirlab.Text = "0%";
             // 
-            // mos
+            // moslab
             // 
-            this.mos.AutoSize = true;
-            this.mos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.mos.Location = new System.Drawing.Point(233, 240);
-            this.mos.Name = "mos";
-            this.mos.Size = new System.Drawing.Size(41, 25);
-            this.mos.TabIndex = 12;
-            this.mos.Text = "0%";
+            this.moslab.AutoSize = true;
+            this.moslab.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.moslab.Location = new System.Drawing.Point(233, 240);
+            this.moslab.Name = "moslab";
+            this.moslab.Size = new System.Drawing.Size(41, 25);
+            this.moslab.TabIndex = 12;
+            this.moslab.Text = "0%";
             // 
-            // pri
+            // prilab
             // 
-            this.pri.AutoSize = true;
-            this.pri.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.pri.Location = new System.Drawing.Point(675, 90);
-            this.pri.Name = "pri";
-            this.pri.Size = new System.Drawing.Size(41, 25);
-            this.pri.TabIndex = 13;
-            this.pri.Text = "0%";
+            this.prilab.AutoSize = true;
+            this.prilab.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.prilab.Location = new System.Drawing.Point(675, 90);
+            this.prilab.Name = "prilab";
+            this.prilab.Size = new System.Drawing.Size(41, 25);
+            this.prilab.TabIndex = 13;
+            this.prilab.Text = "0%";
             // 
-            // sov
+            // sovlab
             // 
-            this.sov.AutoSize = true;
-            this.sov.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.sov.Location = new System.Drawing.Point(675, 140);
-            this.sov.Name = "sov";
-            this.sov.Size = new System.Drawing.Size(41, 25);
-            this.sov.TabIndex = 14;
-            this.sov.Text = "0%";
+            this.sovlab.AutoSize = true;
+            this.sovlab.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.sovlab.Location = new System.Drawing.Point(675, 140);
+            this.sovlab.Name = "sovlab";
+            this.sovlab.Size = new System.Drawing.Size(41, 25);
+            this.sovlab.TabIndex = 14;
+            this.sovlab.Text = "0%";
             // 
-            // nsav
+            // nsavlab
             // 
-            this.nsav.AutoSize = true;
-            this.nsav.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.nsav.Location = new System.Drawing.Point(675, 190);
-            this.nsav.Name = "nsav";
-            this.nsav.Size = new System.Drawing.Size(41, 25);
-            this.nsav.TabIndex = 15;
-            this.nsav.Text = "0%";
+            this.nsavlab.AutoSize = true;
+            this.nsavlab.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.nsavlab.Location = new System.Drawing.Point(675, 190);
+            this.nsavlab.Name = "nsavlab";
+            this.nsavlab.Size = new System.Drawing.Size(41, 25);
+            this.nsavlab.TabIndex = 15;
+            this.nsavlab.Text = "0%";
             // 
             // Form4
             // 
@@ -201,13 +201,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(800, 293);
-            this.Controls.Add(this.nsav);
-            this.Controls.Add(this.sov);
-            this.Controls.Add(this.pri);
-            this.Controls.Add(this.mos);
-            this.Controls.Add(this.kir);
-            this.Controls.Add(this.vah);
-            this.Controls.Add(this.avi);
+            this.Controls.Add(this.nsavlab);
+            this.Controls.Add(this.sovlab);
+            this.Controls.Add(this.prilab);
+            this.Controls.Add(this.moslab);
+            this.Controls.Add(this.kirlab);
+            this.Controls.Add(this.vahlab);
+            this.Controls.Add(this.avilab);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
@@ -235,12 +235,12 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label avi;
-        private System.Windows.Forms.Label vah;
-        private System.Windows.Forms.Label kir;
-        private System.Windows.Forms.Label mos;
-        private System.Windows.Forms.Label pri;
-        private System.Windows.Forms.Label sov;
-        private System.Windows.Forms.Label nsav;
+        private System.Windows.Forms.Label avilab;
+        private System.Windows.Forms.Label vahlab;
+        private System.Windows.Forms.Label kirlab;
+        private System.Windows.Forms.Label moslab;
+        private System.Windows.Forms.Label prilab;
+        private System.Windows.Forms.Label sovlab;
+        private System.Windows.Forms.Label nsavlab;
     }
 }
