@@ -49,7 +49,6 @@
             this.textOt = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.textPhone = new System.Windows.Forms.TextBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.label12 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -77,7 +76,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
-            this.label3.Location = new System.Drawing.Point(394, 146);
+            this.label3.Location = new System.Drawing.Point(395, 146);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(193, 26);
             this.label3.TabIndex = 4;
@@ -86,6 +85,7 @@
             // textItem
             // 
             this.textItem.Location = new System.Drawing.Point(168, 89);
+            this.textItem.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textItem.Name = "textItem";
             this.textItem.Size = new System.Drawing.Size(175, 22);
             this.textItem.TabIndex = 5;
@@ -104,7 +104,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
-            this.label5.Location = new System.Drawing.Point(12, 211);
+            this.label5.Location = new System.Drawing.Point(12, 210);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(112, 26);
             this.label5.TabIndex = 7;
@@ -112,16 +112,19 @@
             // 
             // textBox
             // 
-            this.textBox.Location = new System.Drawing.Point(168, 211);
+            this.textBox.Location = new System.Drawing.Point(168, 210);
+            this.textBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox.MaxLength = 300;
             this.textBox.Multiline = true;
             this.textBox.Name = "textBox";
-            this.textBox.Size = new System.Drawing.Size(303, 81);
+            this.textBox.Size = new System.Drawing.Size(303, 82);
             this.textBox.TabIndex = 9;
             // 
             // dateTimePicker1
             // 
+            this.dateTimePicker1.CustomFormat = "yyyy-MM-dd";
             this.dateTimePicker1.Location = new System.Drawing.Point(627, 151);
+            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(200, 22);
             this.dateTimePicker1.TabIndex = 10;
@@ -130,6 +133,7 @@
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
             this.button1.Location = new System.Drawing.Point(509, 490);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(192, 62);
             this.button1.TabIndex = 11;
@@ -141,7 +145,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
-            this.label6.Location = new System.Drawing.Point(394, 85);
+            this.label6.Location = new System.Drawing.Point(395, 85);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(76, 26);
             this.label6.TabIndex = 12;
@@ -150,6 +154,7 @@
             // textStreet
             // 
             this.textStreet.Location = new System.Drawing.Point(627, 89);
+            this.textStreet.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textStreet.Name = "textStreet";
             this.textStreet.Size = new System.Drawing.Size(175, 22);
             this.textStreet.TabIndex = 13;
@@ -167,15 +172,17 @@
             "Приволжский",
             "Советский"});
             this.comboBox1.Location = new System.Drawing.Point(168, 146);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(175, 24);
             this.comboBox1.TabIndex = 14;
+            this.comboBox1.TextChanged += new System.EventHandler(this.comboBox1_TextChanged);
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.label7.Location = new System.Drawing.Point(196, 331);
+            this.label7.Location = new System.Drawing.Point(192, 373);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(391, 29);
             this.label7.TabIndex = 15;
@@ -214,6 +221,7 @@
             // textF
             // 
             this.textF.Location = new System.Drawing.Point(168, 436);
+            this.textF.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textF.Name = "textF";
             this.textF.Size = new System.Drawing.Size(175, 22);
             this.textF.TabIndex = 21;
@@ -221,6 +229,7 @@
             // textIm
             // 
             this.textIm.Location = new System.Drawing.Point(168, 490);
+            this.textIm.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textIm.Name = "textIm";
             this.textIm.Size = new System.Drawing.Size(175, 22);
             this.textIm.TabIndex = 22;
@@ -228,6 +237,7 @@
             // textOt
             // 
             this.textOt.Location = new System.Drawing.Point(168, 542);
+            this.textOt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textOt.Name = "textOt";
             this.textOt.Size = new System.Drawing.Size(175, 22);
             this.textOt.TabIndex = 23;
@@ -244,25 +254,13 @@
             // 
             // textPhone
             // 
-            this.textPhone.Location = new System.Drawing.Point(662, 440);
-            this.textPhone.MaxLength = 12;
+            this.textPhone.Location = new System.Drawing.Point(661, 441);
+            this.textPhone.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textPhone.MaxLength = 10;
             this.textPhone.Name = "textPhone";
             this.textPhone.Size = new System.Drawing.Size(175, 22);
             this.textPhone.TabIndex = 25;
             this.textPhone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textPhone_KeyPress);
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.checkBox1.Location = new System.Drawing.Point(242, 377);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(275, 28);
-            this.checkBox1.TabIndex = 26;
-            this.checkBox1.Text = "Не оставлять свои данные";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // label12
             // 
@@ -279,7 +277,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(849, 588);
             this.Controls.Add(this.label12);
-            this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.textPhone);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.textOt);
@@ -302,6 +299,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
             this.Name = "Form2";
             this.Text = "Добавить предмет";
@@ -333,7 +331,6 @@
         private System.Windows.Forms.TextBox textOt;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox textPhone;
-        private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.Label label12;
     }
 }

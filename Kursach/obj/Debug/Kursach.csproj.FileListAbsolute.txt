@@ -32,3 +32,4 @@ D:\Программирование\Projects\Kursach\Kursach\obj\Debug\Kursach.p
 D:\Программирование\Projects\Kursach\Kursach\bin\Debug\BN.mdf
 D:\Программирование\Projects\Kursach\Kursach\bin\Debug\BN_log.ldf
 D:\Программирование\Projects\Kursach\Kursach\obj\Debug\Kursach.Form5.resources
+D:\Программирование\Projects\Kursach\Kursach\obj\Debug\Kursach.Form6.resources
